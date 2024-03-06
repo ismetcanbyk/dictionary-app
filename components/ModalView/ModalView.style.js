@@ -1,29 +1,6 @@
 import { StyleSheet } from "react-native";
 
 export default StyleSheet.create({
-    headerContainer: {
-        flex: 1,
-        marginTop: 50,
-    },
-    container: {
-        flex: 1,
-        backgroundColor: "#fff",
-        alignItems: "center",
-        justifyContent: "center",
-    },
-    words: { fontSize: 60, fontWeight: "bold" },
-    nav: {
-        margin: 10,
-        width: 200,
-        flexDirection: "row",
-        justifyContent: "space-between",
-    },
-    word: { flexDirection: "row", width: "90%", height: 200 },
-    wordSegment: { flex: 1, justifyContent: "center", alignItems: "center" },
-    en: { fontWeight: "bold", fontSize: 40 },
-    tr: { fontWeight: "bold", fontSize: 25, color: "gray" },
-    createButton: { position: "absolute", right: 20, bottom: 20 },
-
     textBox: {
         width: 250,
         height: 50,
@@ -49,7 +26,11 @@ export default StyleSheet.create({
         color: "white",
         fontSize: 20,
     },
-    close: { position: "absolute", top: 15, right: 25 },
+    close: {
+        position: "absolute",
+        top: 15,
+        right: 25
+    },
     cross: {
         color: "gray",
         fontWeight: "bold",

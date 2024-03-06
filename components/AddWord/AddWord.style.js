@@ -8,9 +8,12 @@ export default StyleSheet.create({
         flexDirection: 'row',
         justifyContent: 'flex-end'
     },
-    icon: {
-        padding: 18,
-        fontSize: 50,
-        color: 'black'
-    }
+    circle: {
+        width: 70,
+        height: 70,
+        backgroundColor: "black",
+        borderRadius: 35,
+        justifyContent: "center",
+        alignItems: "center",
+    },
 });

@@ -1,16 +1,24 @@
 import { View, Text, TouchableOpacity } from 'react-native'
 import React from 'react'
-import { AntDesign } from '@expo/vector-icons';
-import style from './AddWord.style'
 
-const AddWord = () => {
+import Style from './AddWord.style'
+import ModalView from '../ModalView';
+import { AntDesign } from "@expo/vector-icons";
+
+const AddWord = (props) => {
+    const { setModal } = props.modal;
     return (
-        <View style={style.iconContainer}>
-            <TouchableOpacity>
-                <AntDesign name="pluscircle" style={style.icon} />
-            </TouchableOpacity>
+        <View style={Style.iconContainer}>
+            <View style={Style.circle}>
+                <TouchableOpacity onPress={() => setModal(true)}>
+                    <AntDesign name="pluscircle" size={50} color="white" />
+                </TouchableOpacity>
+            </View>
+
+            <ModalView {...props} />
+
         </View>
-    )
-}
+    );
+};
 
 export default AddWord
