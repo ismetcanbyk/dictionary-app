@@ -9,7 +9,7 @@ const Header = () => {
     const dictionary = useSelector((state) => state.dictionary)
 
     useEffect(() => {
-        console.log(dictionary)
+        console.log(dictionary.length)
         console.log(index)
     }, [index, dictionary])
 
@@ -17,7 +17,7 @@ const Header = () => {
         <View style={Style.container}>
             <Text style={Style.words}>
                 {index + 1} <AntDesign name="smile-circle" size={40} color="black" />f
-                <Text style={Style.current}> 100</Text>
+                <Text style={Style.current}> {dictionary.length}</Text>
             </Text>
 
         </View>

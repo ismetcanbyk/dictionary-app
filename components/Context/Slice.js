@@ -15,6 +15,7 @@ const Slice = createSlice({
     ],
     reducers: {
         addWord: (state, action) => {
+            console.log(action.payload)
             state.push(action.payload)
         }
     }

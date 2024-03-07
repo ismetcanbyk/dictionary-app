@@ -1,10 +1,17 @@
-import { View, Text, Modal, TouchableOpacity, TextInput } from 'react-native'
-import React from 'react'
+import { View, Text, Modal, TouchableOpacity, TextInput, Alert } from 'react-native'
+import React, { useState } from 'react'
 import Style from './ModalView.style'
 import { AntDesign, Ionicons } from "@expo/vector-icons";
+import { useDispatch } from 'react-redux';
+import { addWord } from '../Context/Slice';
 
 const ModalView = (props) => {
     const { modal, setModal } = props.modal;
+    const [en, setEn] = useState('');
+    const [tr, setTr] = useState('');
+    const dispatch = useDispatch();
+
+
     return (
         <Modal
             transparent
@@ -17,12 +24,28 @@ const ModalView = (props) => {
                     <Text style={Style.cross}>x</Text>
                 </TouchableOpacity>
 
-                <TextInput placeholder="English" style={Style.textBox} />
-                <TextInput placeholder="Turkish" style={Style.textBox} />
+                <TextInput onChangeText={(e) => setEn(e)} value={en} placeholder="English" style={Style.textBox} />
+                <TextInput onChangeText={(t) => setTr(t)} value={tr} placeholder="Turkish" style={Style.textBox} />
 
-                <TouchableOpacity>
+                <TouchableOpacity onPress={
+                    () => {
+                        if (en.trim() === '' || tr.trim() === '') {
+                            Alert.alert('Uyarı', 'Lütfen her iki dil için de bir kelime giriniz.');
+                            return;
+                        }
+                        const obj = {
+                            en,
+                            tr
+                        }
+                        dispatch(addWord(obj))
+                        setEn('')
+                        setTr('')
+                        setModal(false)
+
+                    }
+                }>
                     <View style={Style.button}>
-                        <AntDesign name="heart" size={20} color="red" />
+                        <AntDesign name="save" size={20} color="white" />
                         <Text style={Style.buttonText}>Save</Text>
                     </View>
                 </TouchableOpacity>
