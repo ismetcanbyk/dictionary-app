@@ -6,7 +6,8 @@ export default StyleSheet.create({
     container: {
         flexDirection: 'row',
         width: device.width * 1.15,
-        flex: 10
+        flex: 1,
+        marginBottom: device.height * 0.4,
     },
     original: {
         fontSize: 46,

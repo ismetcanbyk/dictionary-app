@@ -1,6 +1,6 @@
 
 import { StatusBar } from "expo-status-bar";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Modal, Text, TextInput, TouchableOpacity, View } from "react-native";
 import Style from "./Styles.js"
 import Word from "./components/Word/Word";
@@ -8,8 +8,18 @@ import AddWord from "./components/AddWord/AddWord";
 import Header from "./components/Header/Header.js";
 import { Provider } from "react-redux";
 import { Store } from "./components/Context/Store.js";
+import AsyncStorage from '@react-native-async-storage/async-storage';
+
+
 
 export default function App() {
+
+
+
+
+
+
+
   const [modal, setModal] = useState(false);
 
   return (

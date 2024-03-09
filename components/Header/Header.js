@@ -8,11 +8,6 @@ const Header = () => {
     const index = useSelector((state) => state.index)
     const dictionary = useSelector((state) => state.dictionary)
 
-    useEffect(() => {
-        console.log(dictionary.length)
-        console.log(index)
-    }, [index, dictionary])
-
     return (
         <View style={Style.container}>
             <Text style={Style.words}>

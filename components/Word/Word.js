@@ -5,7 +5,7 @@ import Button from '../Button'
 import { useDispatch, useSelector } from 'react-redux'
 import { decreaseIndex, increaseIndex } from '../Context/IndexSlice'
 
-const Word = ({ translation, original }) => {
+const Word = () => {
     const index = useSelector((state) => state.index)
     const dictionary = useSelector((state) => state.dictionary)
 
